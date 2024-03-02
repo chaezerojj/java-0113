@@ -1,0 +1,37 @@
+package section18;
+
+class AddThread implements Runnable {
+	private Bank b;
+	private String name;
+	public AddThread(String name, Bank b) {
+		this.name = name;
+		this.b = b;
+	}
+	
+	@Override
+	public void run() {
+		try {
+			for (int i = 0; i < 10; i++) {
+				Thread.sleep(1000);
+				b.addMoney(1000);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+
+public class BackThreadExample {
+
+	public static void main(String[] args) {
+		
+		Bank b = new Bank();
+		
+		Thread th1 = new Thread(new AddThread("1번", b));
+		
+		th1.start();
+		
+	}
+
+}

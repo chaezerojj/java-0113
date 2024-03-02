@@ -1,0 +1,40 @@
+package section18;
+
+class whiteFlag implements Runnable {
+	@Override
+	public void run() {
+//		while (true) {
+//			System.out.println("백기 올려");
+//		}
+	}
+}
+
+public class RunnableExample {
+
+	public static void main(String[] args) {
+//		Thread white = new Thread(new whiteFlag());
+//		
+//		white.start();
+		Runnable white = () -> {
+			int count = 0;
+			while (count < 10) {
+				System.out.println("백기 올려");
+				count++;
+			}
+		};
+		
+		Runnable blue = () -> {
+			int count = 0;
+			while (count < 10) {
+				System.out.println("청기 올려");
+			}
+		};
+		
+		Thread whiteFlag = new Thread(white);
+		whiteFlag.start();
+		Thread blueFlag = new Thread(blue);
+		blueFlag.start();
+		
+	}
+
+}

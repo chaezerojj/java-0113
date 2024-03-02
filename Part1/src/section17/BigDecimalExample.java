@@ -1,0 +1,25 @@
+package section17;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class BigDecimalExample {
+
+	public static void main(String[] args) {
+		double val = 1.1234567890;
+		
+		BigDecimal result1 = new BigDecimal(val).setScale(0, RoundingMode.FLOOR);
+		System.out.println(result1);
+		
+		BigDecimal result2 = new BigDecimal(val).setScale(0, RoundingMode.CEILING);
+		System.out.println(result2);
+		
+		BigDecimal result3 = new BigDecimal(-val).setScale(0, RoundingMode.CEILING);
+		System.out.println(result3);
+		
+		BigDecimal result4 = new BigDecimal("0.9990").stripTrailingZeros();
+		System.out.println(result4);
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package section18;
+
+public class MyThreadEx {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

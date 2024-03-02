@@ -1,0 +1,10 @@
+package section18;
+
+public class ThreadWaitExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
